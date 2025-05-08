@@ -11,23 +11,29 @@ function App() {
   const [showSettings, setShowSettings] = useState<boolean>(false);
   return (
     <div
-      className={`bg-white relative h-screen font-roboto flex flex-col items-center justify-between py-10 transition-all duration-300 w-full dark:bg-black ${
+      className={`bg-white relative h-screen font-roboto py-10 transition-all duration-300 w-full dark:bg-black ${
         dark ? "dark" : ""
       }`}
     >
-      <div
-        className={`flex items-center gap-x-6 text-xl dark:text-white cursor-pointer ${
-          showSettings && "relative z-10 text-white"
-        }`}
-      >
-        <GoInfo />
-        <GoGear onClick={() => setShowSettings((prev) => !prev)} />
-        <GrPowerReset onClick={() => setCount(0)} />
-      </div>
+      <div className="md:w-96 flex flex-col items-center justify-between mx-auto h-full">
+        <div
+          className={`flex items-center gap-x-6 text-xl dark:text-white cursor-pointer ${
+            showSettings && "relative z-10 text-white"
+          }`}
+        >
+          <GoInfo />
+          <GoGear onClick={() => setShowSettings((prev) => !prev)} />
+          <GrPowerReset onClick={() => setCount(0)} />
+        </div>
 
-      <ToogleTheme setDark={setDark} dark={dark} showSettings={showSettings} />
-      <DisplayCounter count={count} />
-      <CounterButtons setCount={setCount} />
+        <ToogleTheme
+          setDark={setDark}
+          dark={dark}
+          showSettings={showSettings}
+        />
+        <DisplayCounter count={count} />
+        <CounterButtons setCount={setCount} />
+      </div>
     </div>
   );
 }
