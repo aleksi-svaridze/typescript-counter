@@ -1,11 +1,15 @@
 import { useState } from "react";
-import Counter from "./components/Counter";
+import ToogleTheme from "./components/ToogleTheme";
 
 function App() {
-  const [count, setCount] = useState<number>(0);
+  const [dark, setDark] = useState(false);
   return (
-    <div>
-      <Counter setCount={setCount}>Count is {count}</Counter>
+    <div
+      className={`bg-white h-screen transition-all duration-300 w-full dark:bg-black ${
+        dark ? "dark" : ""
+      }`}
+    >
+      <ToogleTheme setDark={setDark} />
     </div>
   );
 }
