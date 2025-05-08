@@ -4,7 +4,7 @@ type ThemeType = {
 
 const ToogleTheme = ({ setDark }: ThemeType) => {
   return (
-    <div>
+    <div className="bg-red-500">
       <button
         className="text-black dark:text-white"
         onClick={() => setDark(true)}
