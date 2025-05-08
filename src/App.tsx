@@ -15,13 +15,17 @@ function App() {
         dark ? "dark" : ""
       }`}
     >
-      <div className="flex items-center gap-x-6 text-xl dark:text-white cursor-pointer">
+      <div
+        className={`flex items-center gap-x-6 text-xl dark:text-white cursor-pointer ${
+          showSettings && "relative z-10 text-white"
+        }`}
+      >
         <GoInfo />
         <GoGear onClick={() => setShowSettings((prev) => !prev)} />
-        <GrPowerReset />
+        <GrPowerReset onClick={() => setCount(0)} />
       </div>
 
-      <ToogleTheme setDark={setDark} showSettings={showSettings} />
+      <ToogleTheme setDark={setDark} dark={dark} showSettings={showSettings} />
       <DisplayCounter count={count} />
       <CounterButtons setCount={setCount} />
     </div>
