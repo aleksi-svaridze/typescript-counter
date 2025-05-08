@@ -8,19 +8,20 @@ import { GrPowerReset } from "react-icons/gr";
 function App() {
   const [dark, setDark] = useState<boolean>(false);
   const [count, setCount] = useState<number>(0);
+  const [showSettings, setShowSettings] = useState<boolean>(false);
   return (
     <div
-      className={`bg-white h-screen font-roboto flex flex-col items-center justify-between py-10 transition-all duration-300 w-full dark:bg-black ${
+      className={`bg-white relative h-screen font-roboto flex flex-col items-center justify-between py-10 transition-all duration-300 w-full dark:bg-black ${
         dark ? "dark" : ""
       }`}
     >
       <div className="flex items-center gap-x-6 text-xl dark:text-white cursor-pointer">
         <GoInfo />
-        <GoGear onClick={() => alert("hello")} />
+        <GoGear onClick={() => setShowSettings((prev) => !prev)} />
         <GrPowerReset />
       </div>
 
-      <ToogleTheme setDark={setDark} />
+      <ToogleTheme setDark={setDark} showSettings={showSettings} />
       <DisplayCounter count={count} />
       <CounterButtons setCount={setCount} />
     </div>
