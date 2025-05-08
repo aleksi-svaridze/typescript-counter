@@ -5,7 +5,7 @@ function App() {
   const [count, setCount] = useState<number>(0);
   return (
     <div>
-      <Counter setCount={setCount}>{count}</Counter>
+      <Counter setCount={setCount}>Count is {count}</Counter>
     </div>
   );
 }

@@ -1,11 +1,11 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
-type CounterTypes = {
+type CounterType = {
   setCount: React.Dispatch<React.SetStateAction<number>>;
   children: ReactNode;
 };
 
-const Counter = ({ setCount, children }: CounterTypes) => {
+const Counter = ({ setCount, children }: CounterType) => {
   return (
     <div>
       <button onClick={() => setCount((prev) => prev + 1)}>+</button>
