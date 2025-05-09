@@ -17,7 +17,11 @@ const DisplayMobileMenu = ({ setDark, dark, showSettings }: ThemeType) => {
       <div className="flex flex-col gap-y-5 items-center justify-center h-full">
         <h3 className="text-white text-2xl">Settings</h3>
 
-        <ToogleTheme setDark={setDark} dark={dark} />
+        <ToogleTheme
+          setDark={setDark}
+          dark={dark}
+          showSettings={showSettings}
+        />
 
         <div className="border-[1px] rounded-md border-white w-52 h-20"></div>
       </div>

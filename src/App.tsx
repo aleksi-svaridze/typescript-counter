@@ -18,7 +18,7 @@ function App() {
     >
       <div className="md:w-96 lg:w-full flex flex-col lg:flex-row items-center justify-between lg:justify-evenly mx-auto h-full">
         <div
-          className={`flex items-center lg:items-start lg:order-2 lg:h-11/12 lg:w-2/5 border-2 gap-x-6 text-xl dark:text-white cursor-pointer lg:cursor-default ${
+          className={`flex items-center lg:items-start lg:order-2 lg:h-11/12 lg:w-2/5 gap-x-6 text-xl dark:text-white cursor-pointer lg:cursor-default mb-10 lg:mb-0 ${
             showSettings && "relative z-10 text-white"
           }`}
         >
@@ -28,9 +28,13 @@ function App() {
             onClick={() => setShowSettings((prev) => !prev)}
           />
           <GrPowerReset className="lg:hidden" onClick={() => setCount(0)} />
-          <div className="flex flex-col items-center pt-10 gap-y-5 w-full h-full">
+          <div className="hidden lg:flex flex-col items-center pt-10 gap-y-5 w-full h-full shadow-2xl md:dark:shadow-white">
             <h3 className="text-2xl">Settings</h3>
-            <ToogleTheme setDark={setDark} dark={dark} />
+            <ToogleTheme
+              setDark={setDark}
+              dark={dark}
+              showSettings={showSettings}
+            />
           </div>
         </div>
 
@@ -40,7 +44,7 @@ function App() {
           showSettings={showSettings}
         />
 
-        <div className="lg:h-11/12 lg:w-2/5 lg:flex lg:order-1 flex-col border-2 items-center justify-between py-10">
+        <div className="h-full lg:h-11/12 w-full lg:w-2/5 lg:order-1 flex flex-col items-center justify-between py-10 md:shadow-2xl md:dark:shadow-white">
           <DisplayCounter count={count} />
           <CounterButtons setCount={setCount} />
         </div>
