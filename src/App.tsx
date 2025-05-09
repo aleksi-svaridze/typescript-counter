@@ -18,7 +18,7 @@ function App() {
     >
       <div className="md:w-96 lg:w-full flex flex-col lg:flex-row items-center justify-between lg:justify-evenly mx-auto h-full">
         <div
-          className={`flex items-center lg:items-start lg:order-2 lg:h-11/12 lg:w-2/5 border-2 gap-x-6 text-xl dark:text-white cursor-pointer ${
+          className={`flex items-center lg:items-start lg:order-2 lg:h-11/12 lg:w-2/5 border-2 gap-x-6 text-xl dark:text-white cursor-pointer lg:cursor-default ${
             showSettings && "relative z-10 text-white"
           }`}
         >

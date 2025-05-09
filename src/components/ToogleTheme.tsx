@@ -8,7 +8,7 @@ type ThemeType = {
 const ToogleTheme = ({ setDark, dark }: ThemeType) => {
   return (
     <button
-      className="text-white flex items-center gap-x-5 border-[1px] rounded-md border-white w-52 h-10 justify-center"
+      className="cursor-pointer dark:text-white dark:border-white flex items-center gap-x-5 border-[1px] rounded-md w-52 h-10 justify-center"
       onClick={() => setDark((prev) => !prev)}
     >
       {dark ? (
