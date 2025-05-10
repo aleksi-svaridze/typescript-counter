@@ -28,7 +28,7 @@ function App() {
             onClick={() => setShowSettings((prev) => !prev)}
           />
           <GrPowerReset className="lg:hidden" onClick={() => setCount(0)} />
-          <div className="hidden lg:flex flex-col items-center pt-10 gap-y-5 w-full h-full shadow-2xl md:dark:shadow-white">
+          <div className="hidden lg:flex flex-col items-center pt-10 gap-y-5 w-full h-full">
             <h3 className="text-2xl">Settings</h3>
             <ToogleTheme
               setDark={setDark}
@@ -44,7 +44,7 @@ function App() {
           showSettings={showSettings}
         />
 
-        <div className="h-full lg:h-11/12 w-full lg:w-2/5 lg:order-1 flex flex-col items-center justify-between py-10 md:shadow-2xl md:dark:shadow-white">
+        <div className="h-full lg:h-11/12 w-full lg:w-2/5 lg:order-1 flex flex-col items-center justify-between py-10">
           <DisplayCounter count={count} />
           <CounterButtons setCount={setCount} />
         </div>
